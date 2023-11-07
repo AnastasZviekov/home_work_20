@@ -1,0 +1,27 @@
+const domContainer = document.querySelector("#root");
+const root = ReactDOM.createRoot(domContainer);
+const animals = [ `cat`, `dog`, `lion` ];
+
+function List (props) {
+    return <React.Fragment><h1 style={ {color: props.colorTitle}} >{ props.title }</h1>
+    </React.Fragment>
+}
+
+function Arrays({color,font}) {
+    const colorStyleLi={color:color,
+    fontStyle:font}
+    return <React.Fragment> {animals.map((el,index)=>{ return <ul><li key={index}style={colorStyleLi}>{el}</li></ul>})}
+</React.Fragment>
+}
+root.render( <React.Fragment>
+
+        <List title="list bird" colorTitle="red"/>
+        <List title="list animal" colorTitle="green"/>
+        <Arrays color="blue" font="italic"/>
+    </React.Fragment>
+
+);
+
+
+
+el.models.map((item,index)=>{ return <TrModel key={index} model={item.name}/> })
